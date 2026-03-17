@@ -1,0 +1,16 @@
+#ifndef FACTORYREGISTRY_H
+#define FACTORYREGISTRY_H
+
+#include <map>
+#include <memory>
+#include "FigureFactory.h"
+
+class FactoryRegistry {
+public:
+    FactoryRegistry();
+    const FigureFactory& getFactory(FigureType type) const;
+private:
+    std::map<FigureType, std::unique_ptr<FigureFactory>> factories_;
+};
+
+#endif // FACTORYREGISTRY_H
