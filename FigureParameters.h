@@ -12,8 +12,8 @@ public:
 };
 
 class CircleParameters : public FigureParameters {
-public:
-    std::string name;
+private: // во всех таких классах сделать поля приватные
+    std::string name;// все имена по ссылке
     Point center{};
     double radius = 0.0;
     FigureType getType() const override {
@@ -34,10 +34,10 @@ public:
 
 class TriangleParameters : public FigureParameters {
 public:
-    std::string name;
+    std::string name;// через ссылку
     Point a{};
-    Point b{};
-    Point c{};
+    Point b{};// зачем инициализировать так??
+    Point c{};// добавить get
 
     FigureType getType() const override {
         return FigureType::Triangle;

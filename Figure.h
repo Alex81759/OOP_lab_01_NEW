@@ -8,7 +8,7 @@ public:
     Figure(std::string name);
     virtual ~Figure() = default;
     const std::string& getName() const;
-    virtual std::string getType() const = 0;//производные классы обязательно переопределить этот метод,
+    virtual std::string getType() const = 0;//сделать возврат по сслыке
     virtual double perimeter() const = 0;
     virtual std::string parametersToString() const = 0;
 protected:

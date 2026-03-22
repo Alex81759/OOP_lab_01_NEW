@@ -12,7 +12,7 @@ public:
     int readFigureTypeChoice() const;
     std::size_t readFigureIndex(std::size_t maxIndex) const;
     double readDouble(const std::string& prompt) const;
-    std::string readNonEmptyString(const std::string& prompt) const;
+    std::string readNonEmptyString(const std::string& prompt) const;// все названия промт поменять на text
     std::unique_ptr<FigureParameters> readFigureParameters(FigureType type) const;
 private:
     Point readPoint(const std::string& prompt) const;

@@ -1,0 +1,13 @@
+# ninja log v6
+625	952	7959083327166750	CMakeFiles/OOP_lab_01_01_NEW.dir/Point.cpp.obj	aeafd436342a0840
+640	1333	7959083327314019	CMakeFiles/OOP_lab_01_01_NEW.dir/Figure.cpp.obj	826819c58deb5767
+611	1452	7959083327019771	CMakeFiles/OOP_lab_01_01_NEW.dir/AppController.cpp.obj	fe5a353a0686c262
+182	1465	7959083322722439	CMakeFiles/OOP_lab_01_01_NEW.dir/Circle.cpp.obj	e7cc6c207458a9
+556	1484	7959083326475797	CMakeFiles/OOP_lab_01_01_NEW.dir/TriangleFactory.cpp.obj	6da3b9eb3e526d9f
+580	1511	7959083326706241	CMakeFiles/OOP_lab_01_01_NEW.dir/FigureCollection.cpp.obj	5a0384e05389da4
+570	1523	7959083326609870	CMakeFiles/OOP_lab_01_01_NEW.dir/FactoryRegistry.cpp.obj	decf0d287205bba2
+273	1559	7959083323646822	CMakeFiles/OOP_lab_01_01_NEW.dir/Rectangle.cpp.obj	9e97015d47a6fd2f
+380	1574	7959083324700885	CMakeFiles/OOP_lab_01_01_NEW.dir/Triangle.cpp.obj	8696a8e415b24b27
+548	1575	7959083326382316	CMakeFiles/OOP_lab_01_01_NEW.dir/RectangleFactory.cpp.obj	70a86659a3876035
+597	1582	7959083326875890	CMakeFiles/OOP_lab_01_01_NEW.dir/OutputPrinter.cpp.obj	43bbf71449c2f07a
+4	1597	7959083320945427	CMakeFiles/OOP_lab_01_01_NEW.dir/main.cpp.obj	c8f116d4bbef6197

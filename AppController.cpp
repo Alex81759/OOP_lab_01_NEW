@@ -25,7 +25,7 @@ void AppController::run() {
     }
 }
 
-void AppController::processMenuChoice(int choice, bool& running) {
+void AppController::processMenuChoice(int choice, bool& running) { // убрать раннинг и сделать черезе словарь словарь, который будет в appcontroller/h
     if (choice == MENU_EXIT) {
         running = false;
     } else if (choice == MENU_ADD) {

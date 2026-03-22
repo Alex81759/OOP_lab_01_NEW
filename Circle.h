@@ -7,7 +7,7 @@
 class Circle : public Figure {
 public:
     Circle(const std::string& name, Point center, double radius);
-    std::string getType() const override;
+    std::string getType() const override;// сделать по сслыке
     double perimeter() const override;
     std::string parametersToString() const override;
 private:

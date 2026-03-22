@@ -7,7 +7,7 @@
 class Rectangle : public Figure {
 public:
     Rectangle(const std::string& name, Point upperLeft, Point lowerRight);
-    std::string getType() const override;
+    std::string getType() const override;// ccылке
     double perimeter() const override;
     std::string parametersToString() const override;
 private:

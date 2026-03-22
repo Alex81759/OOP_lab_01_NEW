@@ -3,7 +3,7 @@
 
 class Point {
 public:
-    Point();
+    Point();// убрать этот конструктор
     Point(double x, double y);
 
     double getX() const;
