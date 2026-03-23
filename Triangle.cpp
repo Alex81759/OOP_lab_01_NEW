@@ -2,49 +2,40 @@
 #include <cmath>
 #include <sstream>
 #include <stdexcept>
-//сделать по аналогии с Circle.cpp
-namespace {
-constexpr double EPS = 1e-9;
+
+#define EPS 1e-9
+
+const std::string TRIANGLE_TYPE = "Triangle";
 
 double distance(const Point& p1, const Point& p2) {
     const double dx = p1.getX() - p2.getX();
     const double dy = p1.getY() - p2.getY();
     return std::sqrt(dx * dx + dy * dy);
 }
-}
 
-Triangle::Triangle(const std::string& name, Point a, Point b, Point c) : Figure(name), a_(a), b_(b), c_(c) {
-    const double ab = distance(a_, b_);
-    const double bc = distance(b_, c_);
-    const double ca = distance(c_, a_);
-
+Triangle::Triangle(const std::string& name, Point a, Point b, Point c) : Figure(name), a(a), b(b), c(c) {
+    const double ab = distance(a, b);
+    const double bc = distance(b, c);
+    const double ca = distance(c, a);
     if (ab <= EPS || bc <= EPS || ca <= EPS) {
         throw std::invalid_argument("Triangle error: identical vertices.");
     }
-
     const double area2 = std::fabs(
-        (b_.getX() - a_.getX()) * (c_.getY() - a_.getY()) -
-        (b_.getY() - a_.getY()) * (c_.getX() - a_.getX())
+        (b.getX() - a.getX()) * (c.getY() - a.getY()) - (b.getY() - a.getY()) * (c.getX() - a.getX())
     );
-
     if (area2 <= EPS) {
         throw std::invalid_argument("Triangle error: degenerate triangle.");
     }
 }
 
-std::string Triangle::getType() const {
-    return "Triangle";
+const std::string& Triangle::getType() const {
+    return TRIANGLE_TYPE;
 }
 
 double Triangle::perimeter() const {
-    return distance(a_, b_) + distance(b_, c_) + distance(c_, a_);
+    return distance(a, b) + distance(b, c) + distance(c, a);
 }
 
 std::string Triangle::parametersToString() const {
-    std::ostringstream out;
-    out << "name = " << name
-        << ", A = (" << a_.getX() << ", " << a_.getY() << ")"
-        << ", B = (" << b_.getX() << ", " << b_.getY() << ")"
-        << ", C = (" << c_.getX() << ", " << c_.getY() << ")";
-    return out.str();
+    return "name = " + name + ", A = (" + std::to_string(a.getX()) + ", " + std::to_string(a.getY()) + ")" + ", B = (" + std::to_string(b.getX()) + ", " + std::to_string(b.getY()) + ")" + ", C = (" + std::to_string(c.getX()) + ", " + std::to_string(c.getY()) + ")";
 }

@@ -27,10 +27,8 @@ void OutputPrinter::printFiguresWithParameters(const FigureCollection& collectio
         std::cout << "Collection is empty.\n";
         return;
     }
-
     for (std::size_t i = 0; i < figures.size(); ++i) {
-        std::cout << i + 1 << ") " << figures[i]->getType()
-        << " | " << figures[i]->parametersToString() << "\n";
+        std::cout << i + 1 << ") " << figures[i]->getType() << " | " << figures[i]->parametersToString() << "\n";
     }
 }
 

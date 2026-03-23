@@ -3,17 +3,16 @@
 
 #include "Figure.h"
 #include "Point.h"
-//сделать по аналогии с Circle.h
-class Rectangle : public Figure {
-public:
-    Rectangle(const std::string& name, Point upperLeft, Point lowerRight);
-    std::string getType() const override;// ccылке
-    double perimeter() const override;
-    std::string parametersToString() const override;
-private:
-    Point upperLeft_;
-    Point lowerRight_;
-};
 
+class Rectangle : public Figure {
+    private:
+        Point upperLeft;
+        Point lowerRight;
+    public:
+        Rectangle(const std::string& name, Point upperLeft, Point lowerRight);
+        const std::string& getType() const override;
+        double perimeter() const override;
+        std::string parametersToString() const override;
+};
 
 #endif // RECTANGLE_H

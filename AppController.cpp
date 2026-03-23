@@ -2,20 +2,20 @@
 #include <stdexcept>
 
 AppController::AppController() {
-    actionHandlers[MenuAction::Add] = [this]() { addFigure(); };
-    actionHandlers[MenuAction::ListWithParameters] = [this]() { output.printFiguresWithParameters(collection); };
-    actionHandlers[MenuAction::ListWithPerimeter] = [this]() { output.printFiguresWithPerimeter(collection); };
-    actionHandlers[MenuAction::TotalPerimeter] = [this]() { output.printTotalPerimeter(collection.totalPerimeter()); };
-    actionHandlers[MenuAction::SortAscending] = [this]() {
+    actionHandlers[MenuAction::MENU_EXIT] = [this]() { addFigure(); };
+    actionHandlers[MenuAction::MENU_ADD] = [this]() { output.printFiguresWithParameters(collection); };
+    actionHandlers[MenuAction::MENU_LIST_PARAMS] = [this]() { output.printFiguresWithPerimeter(collection); };
+    actionHandlers[MenuAction::MENU_TOTAL_PERIMETER] = [this]() { output.printTotalPerimeter(collection.totalPerimeter()); };
+    actionHandlers[MenuAction::MENU_SORT] = [this]() {
         collection.sortByPerimeterAscending();
         output.printMessage("Sorted.");
     };
-    actionHandlers[MenuAction::RemoveByIndex] = [this]() {
+    actionHandlers[MenuAction::MENU_REMOVE_BY_INDEX] = [this]() {
         const std::size_t index = input.readFigureIndex(collection.size());
         collection.removeByIndex(index);
         output.printMessage("Removed.");
     };
-    actionHandlers[MenuAction::RemoveWithPerimeterGreater] = [this]() {
+    actionHandlers[MenuAction::MENU_REMOVE_GREATER] = [this]() {
         const double limit = input.readDouble("Enter perimeter limit: ");
         collection.removeWithPerimeterGreaterThan(limit);
         output.printMessage("Removed figures with perimeter greater than limit.");
@@ -27,7 +27,7 @@ void AppController::run() {
     while (isRunning) {
         try {
             output.printMainMenu();
-            const int choice = input.readMenuChoice(0, 7);
+            const int choice = input.readMenuChoice();
             isRunning = processMenuChoice(choice);
         } catch (const std::exception& ex) {
             output.printError(ex.what());
@@ -37,16 +37,13 @@ void AppController::run() {
 
 bool AppController::processMenuChoice(int choice) {
     const auto action = static_cast<MenuAction>(choice);
-
-    if (action == MenuAction::Exit) {
+    if (action == MenuAction::MENU_EXIT) {
         return false;
     }
-
     const auto it = actionHandlers.find(action);
     if (it == actionHandlers.end()) {
         throw std::invalid_argument("Unknown menu action.");
     }
-
     it->second();
     return true;
 }

@@ -7,13 +7,13 @@
 class Triangle : public Figure {
 public:
     Triangle(const std::string& name, Point a, Point b, Point c);
-    std::string getType() const override;
+    const std::string& getType() const override;
     double perimeter() const override;
     std::string parametersToString() const override;
 private:
-    Point a_;
-    Point b_;
-    Point c_;
+    Point a;
+    Point b;
+    Point c;
 };
 
 

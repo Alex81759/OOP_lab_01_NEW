@@ -10,7 +10,7 @@ class Figure {
         Figure(std::string name);
         virtual ~Figure() = default;
         const std::string& getName() const;
-        const std::string& getType() const;
+        virtual const std::string& getType() const = 0;
         virtual double perimeter() const = 0;
         virtual std::string parametersToString() const = 0;
 };
