@@ -6,42 +6,71 @@
 #include "FigureType.h"
 
 class FigureParameters {
-public:
-    virtual ~FigureParameters() = default;
-    virtual FigureType getType() const = 0;
+    private:
+        std::string name;
+    protected:
+        explicit FigureParameters(std::string figureName) : name(std::move(figureName)) {}
+    public:
+        virtual ~FigureParameters() = default;
+        virtual FigureType getType() const = 0;
+        const std::string& getName() const {
+            return name;
+        }
 };
 
 class CircleParameters : public FigureParameters {
-private: // во всех таких классах сделать поля приватные
-    std::string name;// все имена по ссылке
-    Point center{};
-    double radius = 0.0;
-    FigureType getType() const override {
-        return FigureType::Circle;
-    }
+    private:
+        Point center;
+        double radius;
+    public:
+        CircleParameters(std::string name, Point centerPoint, double circleRadius) : FigureParameters(std::move(name)), center(centerPoint), radius(circleRadius) {}
+        FigureType getType() const override {
+            return FigureType::Circle;
+        }
+        const Point& getCenter() const {
+            return center;
+        }
+        double getRadius() const {
+            return radius;
+        }
 };
 
 class RectangleParameters : public FigureParameters {
-public:
-    std::string name;
-    Point upperLeft{};
-    Point lowerRight{};
-
-    FigureType getType() const override {
-        return FigureType::Rectangle;
-    }
+    private:
+        Point upperLeft;
+        Point lowerRight;
+    public:
+        RectangleParameters(std::string name, Point upperLeftPoint, Point lowerRightPoint) : FigureParameters(std::move(name)), upperLeft(upperLeftPoint), lowerRight(lowerRightPoint) {}
+        FigureType getType() const override {
+            return FigureType::Rectangle;
+        }
+        const Point& getUpperLeft() const {
+            return upperLeft;
+        }
+        const Point& getLowerRight() const {
+            return lowerRight;
+        }
 };
 
 class TriangleParameters : public FigureParameters {
-public:
-    std::string name;// через ссылку
-    Point a{};
-    Point b{};// зачем инициализировать так??
-    Point c{};// добавить get
-
-    FigureType getType() const override {
-        return FigureType::Triangle;
-    }
+    private:
+        Point a;
+        Point b;
+        Point c;
+    public:
+        TriangleParameters(std::string name, Point pointA, Point pointB, Point pointC) : FigureParameters(std::move(name)), a(pointA), b(pointB), c(pointC) {}
+        FigureType getType() const override {
+            return FigureType::Triangle;
+        }
+        const Point& getA() const {
+            return a;
+        }
+        const Point& getB() const {
+            return b;
+        }
+        const Point& getC() const {
+            return c;
+        }
 };
 
 #endif // FIGUREPARAMETERS_H

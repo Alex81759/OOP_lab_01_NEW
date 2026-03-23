@@ -4,15 +4,15 @@
 #include <string>
 
 class Figure {
-public:
-    Figure(std::string name);
-    virtual ~Figure() = default;
-    const std::string& getName() const;
-    virtual std::string getType() const = 0;//сделать возврат по сслыке
-    virtual double perimeter() const = 0;
-    virtual std::string parametersToString() const = 0;
-protected:
-    std::string name_;//
+    protected:
+        std::string name;
+    public:
+        Figure(std::string name);
+        virtual ~Figure() = default;
+        const std::string& getName() const;
+        const std::string& getType() const;
+        virtual double perimeter() const = 0;
+        virtual std::string parametersToString() const = 0;
 };
 
 #endif // FIGURE_H

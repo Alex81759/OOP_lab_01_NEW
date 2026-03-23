@@ -2,7 +2,7 @@
 #include <cmath>
 #include <sstream>
 #include <stdexcept>
-
+//сделать по аналогии с Circle.cpp
 namespace {
 constexpr double EPS = 1e-9;
 
@@ -42,7 +42,7 @@ double Triangle::perimeter() const {
 
 std::string Triangle::parametersToString() const {
     std::ostringstream out;
-    out << "name = " << name_
+    out << "name = " << name
         << ", A = (" << a_.getX() << ", " << a_.getY() << ")"
         << ", B = (" << b_.getX() << ", " << b_.getY() << ")"
         << ", C = (" << c_.getX() << ", " << c_.getY() << ")";

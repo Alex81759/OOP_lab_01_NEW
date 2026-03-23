@@ -1,34 +1,27 @@
 #include "Circle.h"
-#include <sstream>
 #include <stdexcept>
+#include <cmath>
 
-namespace {
-constexpr double EPS = 1e-9;
-constexpr double PI = 3.14159265358979323846;
-}
+#define _USE_MATH_DEFINES
+#define EPS 1e-9
 
-Circle::Circle(const std::string& name, Point center, double radius) : Figure(name), center_(center), radius_(radius) {
+const std::string CIRCLE_TYPE = "Circle";
+
+Circle::Circle(const std::string& name, Point center, double radius) : Figure(name), center(center), radius(radius) {
     if (radius <= EPS) {
         throw std::invalid_argument("Circle error: radius must be > 0.");
     }
 }
 
-std::string Circle::getType() const {
-    return "Circle";
+const std::string& Circle::getType() const {
+    return CIRCLE_TYPE;
 }
 
 double Circle::perimeter() const {
-    return 2.0 * PI * radius_;
+    return 2.0 * M_PI * radius;
 }
 
 std::string Circle::parametersToString() const {
-    std::ostringstream out;
-    out << "name = " << name_
-        << ", center = (" << center_.getX() << ", " << center_.getY() << ")"
-        << ", radius = " << radius_;
-    return out.str();
+    return "name = " + name + ", center = (" + std::to_string(center.getX()) + ", " + std::to_string(center.getY()) + "), radius = " + std::to_string(radius);
 }
-//"sdfsdf" + " sdfsdfsdf" strcatcat перегрузка оператора
-//позволяет определить для объектов классов втроенные операторы, такие как +, -, * и т.д.
-//Для определения оператора для объектов своего класса, необходимо определить функцию,
-//название которой содержит слово operator
+

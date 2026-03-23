@@ -6,11 +6,11 @@
 #include "FigureFactory.h"
 
 class FactoryRegistry {
-public:
-    FactoryRegistry();
-    const FigureFactory& getFactory(FigureType type) const;
-private:
-    std::map<FigureType, std::unique_ptr<FigureFactory>> factories_;
+    private:
+        std::map<FigureType, std::unique_ptr<FigureFactory>> factories;
+    public:
+        FactoryRegistry();
+        const FigureFactory& getFactory(FigureType type) const;
 };
 
 #endif // FACTORYREGISTRY_H

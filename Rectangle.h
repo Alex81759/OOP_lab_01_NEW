@@ -3,7 +3,7 @@
 
 #include "Figure.h"
 #include "Point.h"
-
+//сделать по аналогии с Circle.h
 class Rectangle : public Figure {
 public:
     Rectangle(const std::string& name, Point upperLeft, Point lowerRight);

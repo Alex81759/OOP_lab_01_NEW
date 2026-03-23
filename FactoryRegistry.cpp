@@ -4,15 +4,18 @@
 #include "TriangleFactory.h"
 #include <stdexcept>
 
-FactoryRegistry::FactoryRegistry() {// сделать по id класса
-    factories_[FigureType::Circle] = std::make_unique<CircleFactory>();
-    factories_[FigureType::Rectangle] = std::make_unique<RectangleFactory>();
-    factories_[FigureType::Triangle] = std::make_unique<TriangleFactory>();
+FactoryRegistry::FactoryRegistry() {
+    auto circleFactory = std::make_unique<CircleFactory>();
+    factories[circleFactory->supportedType()] = std::move(circleFactory);
+    auto rectangleFactory = std::make_unique<RectangleFactory>();
+    factories[rectangleFactory->supportedType()] = std::move(rectangleFactory);
+    auto triangleFactory = std::make_unique<TriangleFactory>();
+    factories[triangleFactory->supportedType()] = std::move(triangleFactory);
 }
 
 const FigureFactory& FactoryRegistry::getFactory(FigureType type) const {
-    const auto it = factories_.find(type);
-    if (it == factories_.end()) {
+    const auto it = factories.find(type);
+    if (it == factories.end()) {
         throw std::invalid_argument("FactoryRegistry error: unknown figure type.");
     }
     return *(it->second);

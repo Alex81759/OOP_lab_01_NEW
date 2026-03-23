@@ -1,62 +1,63 @@
 #include "AppController.h"
 #include <stdexcept>
 
-namespace {
-    constexpr int MENU_EXIT = 0;
-    constexpr int MENU_ADD = 1;
-    constexpr int MENU_LIST_PARAMS = 2;
-    constexpr int MENU_LIST_PERIMETER = 3;
-    constexpr int MENU_TOTAL_PERIMETER = 4;
-    constexpr int MENU_SORT = 5;
-    constexpr int MENU_REMOVE_BY_INDEX = 6;
-    constexpr int MENU_REMOVE_GREATER = 7;
+AppController::AppController() {
+    actionHandlers[MenuAction::Add] = [this]() { addFigure(); };
+    actionHandlers[MenuAction::ListWithParameters] = [this]() { output.printFiguresWithParameters(collection); };
+    actionHandlers[MenuAction::ListWithPerimeter] = [this]() { output.printFiguresWithPerimeter(collection); };
+    actionHandlers[MenuAction::TotalPerimeter] = [this]() { output.printTotalPerimeter(collection.totalPerimeter()); };
+    actionHandlers[MenuAction::SortAscending] = [this]() {
+        collection.sortByPerimeterAscending();
+        output.printMessage("Sorted.");
+    };
+    actionHandlers[MenuAction::RemoveByIndex] = [this]() {
+        const std::size_t index = input.readFigureIndex(collection.size());
+        collection.removeByIndex(index);
+        output.printMessage("Removed.");
+    };
+    actionHandlers[MenuAction::RemoveWithPerimeterGreater] = [this]() {
+        const double limit = input.readDouble("Enter perimeter limit: ");
+        collection.removeWithPerimeterGreaterThan(limit);
+        output.printMessage("Removed figures with perimeter greater than limit.");
+    };
 }
 
 void AppController::run() {
-    bool running = true;
-    while (running) {
+    bool isRunning = true;
+    while (isRunning) {
         try {
             output.printMainMenu();
             const int choice = input.readMenuChoice(0, 7);
-            processMenuChoice(choice, running);
+            isRunning = processMenuChoice(choice);
         } catch (const std::exception& ex) {
             output.printError(ex.what());
         }
     }
 }
 
-void AppController::processMenuChoice(int choice, bool& running) { // убрать раннинг и сделать черезе словарь словарь, который будет в appcontroller/h
-    if (choice == MENU_EXIT) {
-        running = false;
-    } else if (choice == MENU_ADD) {
-        addFigure();
-    } else if (choice == MENU_LIST_PARAMS) {
-        output.printFiguresWithParameters(collection);
-    } else if (choice == MENU_LIST_PERIMETER) {
-        output.printFiguresWithPerimeter(collection);
-    } else if (choice == MENU_TOTAL_PERIMETER) {
-        output.printTotalPerimeter(collection.totalPerimeter());
-    } else if (choice == MENU_SORT) {
-        collection.sortByPerimeterAscending();
-        output.printMessage("Sorted.");
-    } else if (choice == MENU_REMOVE_BY_INDEX) {
-        const std::size_t index = input.readFigureIndex(collection.size());
-        collection.removeByIndex(index);
-        output.printMessage("Removed.");
-    } else if (choice == MENU_REMOVE_GREATER) {
-        const double limit = input.readDouble("Enter perimeter limit: ");
-        collection.removeWithPerimeterGreaterThan(limit);
-        output.printMessage("Removed figures with perimeter greater than limit.");
+bool AppController::processMenuChoice(int choice) {
+    const auto action = static_cast<MenuAction>(choice);
+
+    if (action == MenuAction::Exit) {
+        return false;
     }
+
+    const auto it = actionHandlers.find(action);
+    if (it == actionHandlers.end()) {
+        throw std::invalid_argument("Unknown menu action.");
+    }
+
+    it->second();
+    return true;
 }
 
 void AppController::addFigure() {
     output.printFigureTypeMenu();
     const int typeValue = input.readFigureTypeChoice();
     const FigureType type = static_cast<FigureType>(typeValue);
-    const auto params = input.readFigureParameters(type);
+    const auto parameters = input.readFigureParameters(type);
     const auto& factory = registry.getFactory(type);
-    auto figure = factory.create(*params);
+    auto figure = factory.create(*parameters);
     collection.add(std::move(figure));
     output.printMessage("Figure added successfully.");
 }

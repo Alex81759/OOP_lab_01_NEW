@@ -8,35 +8,46 @@ void clearInput() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-int InputReader::readMenuChoice(int minValue, int maxValue) const {
+int InputReader::readMenuChoice() const {
     int value = 0;
     bool isValid = false;
-
     while (!isValid) {
-        std::cout << "Choose menu item [" << minValue << ".." << maxValue << "]: ";
+        std::cout << "Choose menu item [" << MinAndMaxValue::minMenuValue << ".." << MinAndMaxValue::maxMenuValue << "]: ";
         std::cin >> value;
-        isValid = std::cin.good() && value >= minValue && value <= maxValue;
+        isValid = std::cin.good() && value >= MinAndMaxValue::minMenuValue && value <= MinAndMaxValue::maxMenuValue;
         if (!isValid) {
             std::cout << "Invalid input. Try again.\n";
-            clearInput();
         }
+        clearInput();
     }
-    clearInput();
+    return value;
+}
+
+int InputReader::readFigureMenuChoice() const {
+    int value = 0;
+    bool isValid = false;
+    while (!isValid) {
+        std::cout << "Choose menu item [" << MinAndMaxValue::minFigureMenuValue << ".." << MinAndMaxValue::maxFigureMenuValue << "]: ";
+        std::cin >> value;
+        isValid = std::cin.good() && value >= MinAndMaxValue::minFigureMenuValue && value <= MinAndMaxValue::maxFigureMenuValue;
+        if (!isValid) {
+            std::cout << "Invalid input. Try again.\n";
+        }
+        clearInput();
+    }
     return value;
 }
 
 int InputReader::readFigureTypeChoice() const {
-    return readMenuChoice(1, 3);
+    return readFigureMenuChoice();
 }
 
 std::size_t InputReader::readFigureIndex(std::size_t maxIndex) const {
     if (maxIndex == 0) {
         throw std::invalid_argument("No figures in collection.");
     }
-
     std::size_t index = 0;
     bool isValid = false;
-
     while (!isValid) {
         std::cout << "Enter figure number [1.." << maxIndex << "]: ";
         std::cin >> index;
@@ -50,12 +61,11 @@ std::size_t InputReader::readFigureIndex(std::size_t maxIndex) const {
     return index - 1;
 }
 
-double InputReader::readDouble(const std::string& prompt) const {
+double InputReader::readDouble(const std::string& text) const {
     double value = 0.0;
     bool isValid = false;
-
     while (!isValid) {
-        std::cout << prompt;
+        std::cout << text;
         std::cin >> value;
         isValid = std::cin.good();
         if (!isValid) {
@@ -67,49 +77,47 @@ double InputReader::readDouble(const std::string& prompt) const {
     return value;
 }
 
-std::string InputReader::readNonEmptyString(const std::string& prompt) const {
-    std::string text;
+std::string InputReader::readNonEmptyString(const std::string& text) const {
+    std::string st;
     bool isValid = false;
-
     while (!isValid) {
-        std::cout << prompt;
-        std::getline(std::cin, text);
-        isValid = !text.empty();
+        std::cout << text;
+        std::getline(std::cin, st);
+        isValid = !st.empty();
         if (!isValid) {
             std::cout << "String must not be empty.\n";
         }
     }
-    return text;
+    return st;
 }
 
-Point InputReader::readPoint(const std::string& prompt) const {
-    std::cout << prompt << "\n";
-    const double x = readDouble("  x: ");
-    const double y = readDouble("  y: ");
+Point InputReader::readPoint(const std::string& text) const {
+    std::cout << text << "\n";
+    const double x = readDouble("x: ");
+    const double y = readDouble("y: ");
     return Point(x, y);
 }
 
 std::unique_ptr<FigureParameters> InputReader::readFigureParameters(FigureType type) const {
+    std::unique_ptr<FigureParameters> result;
     if (type == FigureType::Circle) {
-        auto params = std::make_unique<CircleParameters>();
-        params->name = readNonEmptyString("Enter circle name: ");
-        params->center = readPoint("Enter circle center");
-        params->radius = readDouble("Enter radius (>0): ");
-        return params;
+        const std::string name = readNonEmptyString("Enter circle name: ");
+        const Point center = readPoint("Enter circle center");
+        const double radius = readDouble("Enter radius (>0): ");
+        result = std::make_unique<CircleParameters>(name, center, radius);
     }
-
-    if (type == FigureType::Rectangle) {
-        auto params = std::make_unique<RectangleParameters>();
-        params->name = readNonEmptyString("Enter rectangle name: ");
-        params->upperLeft = readPoint("Enter upper-left point");
-        params->lowerRight = readPoint("Enter lower-right point");
-        return params;
+    else if (type == FigureType::Rectangle) {
+        const std::string name = readNonEmptyString("Enter rectangle name: ");
+        const Point upperLeft = readPoint("Enter upper-left point");
+        const Point lowerRight = readPoint("Enter lower-right point");
+        result = std::make_unique<RectangleParameters>(name, upperLeft, lowerRight);
     }
-
-    auto params = std::make_unique<TriangleParameters>();
-    params->name = readNonEmptyString("Enter triangle name: ");
-    params->a = readPoint("Enter point A");
-    params->b = readPoint("Enter point B");
-    params->c = readPoint("Enter point C");
-    return params;
+    else {
+        const std::string name = readNonEmptyString("Enter triangle name: ");
+        const Point a = readPoint("Enter point A");
+        const Point b = readPoint("Enter point B");
+        const Point c = readPoint("Enter point C");
+        result = std::make_unique<TriangleParameters>(name, a, b, c);
+    }
+    return result;
 }

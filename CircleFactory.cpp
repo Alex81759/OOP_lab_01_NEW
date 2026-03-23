@@ -9,9 +9,9 @@ std::unique_ptr<Figure> CircleFactory::create(const FigureParameters& params) co
     }
 
     return std::make_unique<Circle>(
-        circleParams->name,
-        circleParams->center,
-        circleParams->radius
+        circleParams->getName(),
+        circleParams->getCenter(),
+        circleParams->getRadius()
     );
 }
 

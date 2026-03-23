@@ -3,7 +3,7 @@
 
 #include "Figure.h"
 #include "Point.h"
-
+//сделать по аналогии с Circle.h
 class Triangle : public Figure {
 public:
     Triangle(const std::string& name, Point a, Point b, Point c);

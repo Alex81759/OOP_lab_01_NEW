@@ -1,7 +1,7 @@
 #include "Rectangle.h"
 #include <sstream>
 #include <stdexcept>
-
+//сделать по аналогии с Circle.cpp
 namespace {
 constexpr double EPS = 1e-9;
 }
@@ -27,7 +27,7 @@ double Rectangle::perimeter() const {
 
 std::string Rectangle::parametersToString() const {
     std::ostringstream out;
-    out << "name = " << name_
+    out << "name = " << name
         << ", upperLeft = (" << upperLeft_.getX() << ", " << upperLeft_.getY() << ")"
         << ", lowerRight = (" << lowerRight_.getX() << ", " << lowerRight_.getY() << ")";
     return out.str();
