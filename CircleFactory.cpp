@@ -7,12 +7,7 @@ std::unique_ptr<Figure> CircleFactory::create(const FigureParameters& params) co
     if (circleParams == nullptr) {
         throw std::invalid_argument("CircleFactory error: wrong parameter type.");
     }
-
-    return std::make_unique<Circle>(
-        circleParams->getName(),
-        circleParams->getCenter(),
-        circleParams->getRadius()
-    );
+    return std::make_unique<Circle>(circleParams->getName(), circleParams->getCenter(), circleParams->getRadius());
 }
 
 FigureType CircleFactory::supportedType() const {

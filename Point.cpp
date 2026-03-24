@@ -9,11 +9,3 @@ double Point::getX() const {
 double Point::getY() const {
     return y;
 }
-
-void Point::setX(double x) {
-    x = x;
-}
-
-void Point::setY(double y) {
-    y = y;
-}

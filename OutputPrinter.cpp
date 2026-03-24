@@ -3,7 +3,7 @@
 #include <iomanip>
 
 void OutputPrinter::printMainMenu() const {
-    std::cout << "\n=== MENU ===\n";
+    std::cout << "=== MENU ===\n";
     std::cout << "1. Add figure\n";
     std::cout << "2. Show list (type + parameters)\n";
     std::cout << "3. Show list (type + perimeter)\n";
@@ -38,11 +38,9 @@ void OutputPrinter::printFiguresWithPerimeter(const FigureCollection& collection
         std::cout << "Collection is empty.\n";
         return;
     }
-
     std::cout << std::fixed << std::setprecision(6);
     for (std::size_t i = 0; i < figures.size(); ++i) {
-        std::cout << i + 1 << ") " << figures[i]->getType()
-        << " | perimeter=" << figures[i]->perimeter() << "\n";
+        std::cout << i + 1 << ") " << figures[i]->getType() << " | perimeter=" << figures[i]->perimeter() << "\n";
     }
 }
 

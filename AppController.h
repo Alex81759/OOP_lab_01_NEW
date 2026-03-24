@@ -26,7 +26,6 @@ class AppController {
         FigureCollection collection;
         InputReader input;
         OutputPrinter output;
-        using ActionHandler = std::function<void()>;
         std::map<MenuAction, std::function<void()>> actionHandlers;
     public:
         AppController();

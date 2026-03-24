@@ -2,24 +2,13 @@
 #include <stdexcept>
 
 AppController::AppController() {
-    actionHandlers[MenuAction::MENU_EXIT] = [this]() { addFigure(); };
-    actionHandlers[MenuAction::MENU_ADD] = [this]() { output.printFiguresWithParameters(collection); };
-    actionHandlers[MenuAction::MENU_LIST_PARAMS] = [this]() { output.printFiguresWithPerimeter(collection); };
-    actionHandlers[MenuAction::MENU_TOTAL_PERIMETER] = [this]() { output.printTotalPerimeter(collection.totalPerimeter()); };
-    actionHandlers[MenuAction::MENU_SORT] = [this]() {
-        collection.sortByPerimeterAscending();
-        output.printMessage("Sorted.");
-    };
-    actionHandlers[MenuAction::MENU_REMOVE_BY_INDEX] = [this]() {
-        const std::size_t index = input.readFigureIndex(collection.size());
-        collection.removeByIndex(index);
-        output.printMessage("Removed.");
-    };
-    actionHandlers[MenuAction::MENU_REMOVE_GREATER] = [this]() {
-        const double limit = input.readDouble("Enter perimeter limit: ");
-        collection.removeWithPerimeterGreaterThan(limit);
-        output.printMessage("Removed figures with perimeter greater than limit.");
-    };
+    actionHandlers[MenuAction::MENU_ADD] = [this] () {addFigure();};
+    actionHandlers[MenuAction::MENU_LIST_PARAMS] = [this] () {output.printFiguresWithParameters(collection); };
+    actionHandlers[MenuAction::MENU_LIST_PERIMETER] = [this] () {output.printFiguresWithPerimeter(collection);};
+    actionHandlers[MenuAction::MENU_TOTAL_PERIMETER] = [this] () {output.printTotalPerimeter(collection.totalPerimeter());};
+    actionHandlers[MenuAction::MENU_SORT] = [this] () {collection.sortByPerimeterAscending(); output.printMessage("Sorted.");};
+    actionHandlers[MenuAction::MENU_REMOVE_BY_INDEX] = [this] () {const std::size_t index = input.readFigureIndex(collection.size()); collection.removeByIndex(index); output.printMessage("Removed.");};
+    actionHandlers[MenuAction::MENU_REMOVE_GREATER] = [this] () {const double limit = input.readDouble("Enter perimeter limit: "); collection.removeWithPerimeterGreaterThan(limit); output.printMessage("Removed figures with perimeter greater than limit.");};
 }
 
 void AppController::run() {
@@ -37,15 +26,17 @@ void AppController::run() {
 
 bool AppController::processMenuChoice(int choice) {
     const auto action = static_cast<MenuAction>(choice);
+    bool result = true;
     if (action == MenuAction::MENU_EXIT) {
-        return false;
+        result = false;
+    } else {
+        const auto it = actionHandlers.find(action);
+        if (it == actionHandlers.end()) {
+            throw std::invalid_argument("Unknown menu action.");
+        }
+        it->second();
     }
-    const auto it = actionHandlers.find(action);
-    if (it == actionHandlers.end()) {
-        throw std::invalid_argument("Unknown menu action.");
-    }
-    it->second();
-    return true;
+    return result;
 }
 
 void AppController::addFigure() {

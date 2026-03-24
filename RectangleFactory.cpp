@@ -7,12 +7,7 @@ std::unique_ptr<Figure> RectangleFactory::create(const FigureParameters& params)
     if (rectParams == nullptr) {
         throw std::invalid_argument("RectangleFactory error: wrong parameter type.");
     }
-
-    return std::make_unique<Rectangle>(
-        rectParams->getName(),
-        rectParams->getUpperLeft(),
-        rectParams->getLowerRight()
-        );
+    return std::make_unique<Rectangle>(rectParams->getName(), rectParams->getUpperLeft(), rectParams->getLowerRight());
 }
 
 FigureType RectangleFactory::supportedType() const {

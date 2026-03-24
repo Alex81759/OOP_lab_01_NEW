@@ -54,10 +54,9 @@ std::size_t InputReader::readFigureIndex(std::size_t maxIndex) const {
         isValid = std::cin.good() && index >= 1 && index <= maxIndex;
         if (!isValid) {
             std::cout << "Invalid number. Try again.\n";
-            clearInput();
         }
+        clearInput();
     }
-    clearInput();
     return index - 1;
 }
 
@@ -70,10 +69,9 @@ double InputReader::readDouble(const std::string& text) const {
         isValid = std::cin.good();
         if (!isValid) {
             std::cout << "Invalid real number. Try again.\n";
-            clearInput();
         }
+        clearInput();
     }
-    clearInput();
     return value;
 }
 

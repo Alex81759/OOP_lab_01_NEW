@@ -4,9 +4,9 @@
 #include "FigureFactory.h"
 
 class TriangleFactory : public FigureFactory {
-public:
-    std::unique_ptr<Figure> create(const FigureParameters& params) const override;
-    FigureType supportedType() const override;
+    public:
+        std::unique_ptr<Figure> create(const FigureParameters& params) const override;
+        FigureType supportedType() const override;
 };
 
 #endif // TRIANGLEFACTORY_H

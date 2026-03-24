@@ -9,8 +9,6 @@ class Point {
         Point(double x, double y);
         double getX() const;
         double getY() const;
-        void setX(double x);// если set не используется, то убрать.
-        void setY(double y);
 };
 
 #endif // POINT_H

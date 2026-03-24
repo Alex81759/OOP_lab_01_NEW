@@ -7,12 +7,7 @@ std::unique_ptr<Figure> TriangleFactory::create(const FigureParameters& params) 
     if (triangleParams == nullptr) {
         throw std::invalid_argument("TriangleFactory error: wrong parameter type.");
     }
-    return std::make_unique<Triangle>(
-        triangleParams->getName(),
-        triangleParams->getA(),
-        triangleParams->getB(),
-        triangleParams->getC()
-        );
+    return std::make_unique<Triangle>(triangleParams->getName(), triangleParams->getA(), triangleParams->getB(), triangleParams->getC());
 }
 
 FigureType TriangleFactory::supportedType() const {
