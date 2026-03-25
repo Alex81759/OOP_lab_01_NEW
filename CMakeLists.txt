@@ -11,7 +11,7 @@ add_executable(OOP_lab_01_01_NEW main.cpp
     Circle.h Circle.cpp
     Rectangle.h Rectangle.cpp
     Triangle.h Triangle.cpp
-    FigureType.h
+
     FigureParameters.h
     FigureFactory.h
     TriangleFactory.h

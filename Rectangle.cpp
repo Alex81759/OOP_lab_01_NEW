@@ -4,8 +4,6 @@
 
 #define EPS 1e-9
 
-const std::string RECTANGLE_TYPE = "Rectangle";
-
 Rectangle::Rectangle(const std::string& name, Point upperLeft, Point lowerRight) : Figure(name), upperLeft(upperLeft), lowerRight(lowerRight) {
     const bool validX = upperLeft.getX() + EPS < lowerRight.getX();
     const bool validY = upperLeft.getY() > lowerRight.getY() + EPS;
@@ -15,7 +13,7 @@ Rectangle::Rectangle(const std::string& name, Point upperLeft, Point lowerRight)
 }
 
 const std::string& Rectangle::getType() const {
-    return RECTANGLE_TYPE;
+    return typeid(Rectangle).name();
 }
 
 double Rectangle::perimeter() const {

@@ -2,8 +2,11 @@
 #define FIGUREPARAMETERS_H
 
 #include <string>
+#include <typeinfo>
 #include "Point.h"
-#include "FigureType.h"
+#include "Circle.h"
+#include "Rectangle.h"
+#include "Triangle.h"
 
 class FigureParameters {
     private:
@@ -12,7 +15,7 @@ class FigureParameters {
         explicit FigureParameters(std::string figureName) : name(std::move(figureName)) {}
     public:
         virtual ~FigureParameters() = default;
-        virtual FigureType getType() const = 0;
+        virtual const std::type_info& getType() const = 0;
         const std::string& getName() const {
             return name;
         }
@@ -24,8 +27,8 @@ class CircleParameters : public FigureParameters {
         double radius;
     public:
         CircleParameters(std::string name, Point centerPoint, double circleRadius) : FigureParameters(std::move(name)), center(centerPoint), radius(circleRadius) {}
-        FigureType getType() const override {
-            return FigureType::Circle;
+        const std::type_info& getType() const override {
+            return typeid(Circle);
         }
         const Point& getCenter() const {
             return center;
@@ -41,8 +44,8 @@ class RectangleParameters : public FigureParameters {
         Point lowerRight;
     public:
         RectangleParameters(std::string name, Point upperLeftPoint, Point lowerRightPoint) : FigureParameters(std::move(name)), upperLeft(upperLeftPoint), lowerRight(lowerRightPoint) {}
-        FigureType getType() const override {
-            return FigureType::Rectangle;
+        const std::type_info& getType() const override {
+            return typeid(Rectangle);
         }
         const Point& getUpperLeft() const {
             return upperLeft;
@@ -59,8 +62,8 @@ class TriangleParameters : public FigureParameters {
         Point c;
     public:
         TriangleParameters(std::string name, Point pointA, Point pointB, Point pointC) : FigureParameters(std::move(name)), a(pointA), b(pointB), c(pointC) {}
-        FigureType getType() const override {
-            return FigureType::Triangle;
+        const std::type_info& getType() const override {
+            return typeid(Triangle);
         }
         const Point& getA() const {
             return a;

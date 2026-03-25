@@ -9,7 +9,3 @@ std::unique_ptr<Figure> TriangleFactory::create(const FigureParameters& params) 
     }
     return std::make_unique<Triangle>(triangleParams->getName(), triangleParams->getA(), triangleParams->getB(), triangleParams->getC());
 }
-
-FigureType TriangleFactory::supportedType() const {
-    return FigureType::Triangle;
-}

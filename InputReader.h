@@ -4,16 +4,13 @@
 #include <memory>
 #include <string>
 #include "FigureParameters.h"
-#include "FigureType.h"
 
 class InputReader {
     private:
-        enum MinAndMaxValue {
-            minMenuValue = 0,
-            minFigureMenuValue = 1,
-            maxMenuValue = 7,
-            maxFigureMenuValue = 3
-        };
+        static const int minMenuValue = 0;
+        static const int minFigureMenuValue = 1;
+        static const int maxMenuValue = 7;
+        static const int maxFigureMenuValue = 3;
         Point readPoint(const std::string& prompt) const;
     public:
         int readMenuChoice() const;
@@ -22,7 +19,7 @@ class InputReader {
         std::size_t readFigureIndex(std::size_t maxIndex) const;
         double readDouble(const std::string& text) const;
         std::string readNonEmptyString(const std::string& text) const;
-        std::unique_ptr<FigureParameters> readFigureParameters(FigureType type) const;
+        std::unique_ptr<FigureParameters> readFigureParameters(std::type_info type) const;
 };
 
 #endif // INPUTREADER_H

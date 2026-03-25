@@ -5,8 +5,6 @@
 #define _USE_MATH_DEFINES
 #define EPS 1e-9
 
-const std::string CIRCLE_TYPE = "Circle";
-
 Circle::Circle(const std::string& name, Point center, double radius) : Figure(name), center(center), radius(radius) {
     if (radius <= EPS) {
         throw std::invalid_argument("Circle error: radius must be > 0.");
@@ -14,7 +12,7 @@ Circle::Circle(const std::string& name, Point center, double radius) : Figure(na
 }
 
 const std::string& Circle::getType() const {
-    return CIRCLE_TYPE;
+    return typeid(Circle).name();
 }
 
 double Circle::perimeter() const {

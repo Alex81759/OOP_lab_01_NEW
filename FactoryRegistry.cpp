@@ -6,11 +6,11 @@
 
 FactoryRegistry::FactoryRegistry() {
     auto circleFactory = std::make_unique<CircleFactory>();
-    factories[circleFactory->supportedType()] = std::move(circleFactory);
+    factories[typeid(Circle).name()] = std::move(circleFactory);
     auto rectangleFactory = std::make_unique<RectangleFactory>();
-    factories[rectangleFactory->supportedType()] = std::move(rectangleFactory);
+    factories[typeid(Circle).name()] = std::move(rectangleFactory);
     auto triangleFactory = std::make_unique<TriangleFactory>();
-    factories[triangleFactory->supportedType()] = std::move(triangleFactory);
+    factories[typeid(Circle).name()] = std::move(triangleFactory);
 }
 
 const FigureFactory& FactoryRegistry::getFactory(FigureType type) const {
@@ -18,5 +18,5 @@ const FigureFactory& FactoryRegistry::getFactory(FigureType type) const {
     if (it == factories.end()) {
         throw std::invalid_argument("FactoryRegistry error: unknown figure type.");
     }
-    return *(it->second);
+    return *(it->second);//
 }

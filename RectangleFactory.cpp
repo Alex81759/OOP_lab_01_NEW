@@ -9,7 +9,3 @@ std::unique_ptr<Figure> RectangleFactory::create(const FigureParameters& params)
     }
     return std::make_unique<Rectangle>(rectParams->getName(), rectParams->getUpperLeft(), rectParams->getLowerRight());
 }
-
-FigureType RectangleFactory::supportedType() const {
-    return FigureType::Rectangle;
-}

@@ -12,9 +12,9 @@ int InputReader::readMenuChoice() const {
     int value = 0;
     bool isValid = false;
     while (!isValid) {
-        std::cout << "Choose menu item [" << MinAndMaxValue::minMenuValue << ".." << MinAndMaxValue::maxMenuValue << "]: ";
+        std::cout << "  Choose menu item [" << minMenuValue << ".." << maxMenuValue << "]: ";
         std::cin >> value;
-        isValid = std::cin.good() && value >= MinAndMaxValue::minMenuValue && value <= MinAndMaxValue::maxMenuValue;
+        isValid = std::cin.good() && value >= minMenuValue && value <= maxMenuValue;
         if (!isValid) {
             std::cout << "Invalid input. Try again.\n";
         }
@@ -27,9 +27,9 @@ int InputReader::readFigureMenuChoice() const {
     int value = 0;
     bool isValid = false;
     while (!isValid) {
-        std::cout << "Choose menu item [" << MinAndMaxValue::minFigureMenuValue << ".." << MinAndMaxValue::maxFigureMenuValue << "]: ";
+        std::cout << "Choose menu item [" << minFigureMenuValue << ".." << maxFigureMenuValue << "]: ";
         std::cin >> value;
-        isValid = std::cin.good() && value >= MinAndMaxValue::minFigureMenuValue && value <= MinAndMaxValue::maxFigureMenuValue;
+        isValid = std::cin.good() && value >= minFigureMenuValue && value <= maxFigureMenuValue;
         if (!isValid) {
             std::cout << "Invalid input. Try again.\n";
         }

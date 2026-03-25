@@ -5,8 +5,6 @@
 
 #define EPS 1e-9
 
-const std::string TRIANGLE_TYPE = "Triangle";
-
 double distance(const Point& p1, const Point& p2) {
     const double dx = p1.getX() - p2.getX();
     const double dy = p1.getY() - p2.getY();
@@ -29,7 +27,7 @@ Triangle::Triangle(const std::string& name, Point a, Point b, Point c) : Figure(
 }
 
 const std::string& Triangle::getType() const {
-    return TRIANGLE_TYPE;
+    return typeid(Triangle).name();
 }
 
 double Triangle::perimeter() const {

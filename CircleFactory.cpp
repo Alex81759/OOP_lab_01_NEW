@@ -9,7 +9,3 @@ std::unique_ptr<Figure> CircleFactory::create(const FigureParameters& params) co
     }
     return std::make_unique<Circle>(circleParams->getName(), circleParams->getCenter(), circleParams->getRadius());
 }
-
-FigureType CircleFactory::supportedType() const {
-    return FigureType::Circle;
-}

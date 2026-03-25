@@ -7,10 +7,10 @@
 
 class FactoryRegistry {
     private:
-        std::map<FigureType, std::unique_ptr<FigureFactory>> factories;
+        std::map<std::type_info, std::unique_ptr<FigureFactory>> factories;
     public:
         FactoryRegistry();
-        const FigureFactory& getFactory(FigureType type) const;
+        const FigureFactory& getFactory(std::type_info type) const;
 };
 
 #endif // FACTORYREGISTRY_H

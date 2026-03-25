@@ -7,7 +7,8 @@
 #include "FigureCollection.h"
 #include "InputReader.h"
 #include "OutputPrinter.h"
-
+// во всей программе поменять TypeFigure
+// поменять имя файлов
 class AppController {
     private:
         enum class MenuAction {
@@ -20,8 +21,14 @@ class AppController {
             MENU_REMOVE_BY_INDEX,
             MENU_REMOVE_GREATER
         };
-        bool processMenuChoice(int choice);
+        bool processMenuChoice(MenuAction action);
         void addFigure();
+        void listParams();
+        void removeGreater();
+        void listPerimeter();
+        void totalPerimeter();
+        void sortFigures();
+        void removeByIndex();
         FactoryRegistry registry;
         FigureCollection collection;
         InputReader input;
