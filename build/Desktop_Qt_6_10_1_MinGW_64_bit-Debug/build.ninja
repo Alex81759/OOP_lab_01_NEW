@@ -55,38 +55,38 @@ build CMakeFiles/OOP_lab_01_01_NEW.dir/main.cpp.obj: CXX_COMPILER__OOP_lab_01_01
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/Circle.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/Circle.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\Circle.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/circle.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/circle.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\circle.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/Rectangle.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/Rectangle.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\Rectangle.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/rectangle.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/rectangle.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\rectangle.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/Triangle.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/Triangle.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\Triangle.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/triangle.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/triangle.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\triangle.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/CircleFactory.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/CircleFactory.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\CircleFactory.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/circleFactory.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/circleFactory.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\circleFactory.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/RectangleFactory.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/RectangleFactory.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\RectangleFactory.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/rectangleFactory.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/rectangleFactory.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\rectangleFactory.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/TriangleFactory.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/TriangleFactory.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\TriangleFactory.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/triangleFactory.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/triangleFactory.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\triangleFactory.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
@@ -97,38 +97,38 @@ build CMakeFiles/OOP_lab_01_01_NEW.dir/FactoryRegistry.cpp.obj: CXX_COMPILER__OO
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/FigureCollection.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/FigureCollection.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\FigureCollection.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/figureCollection.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/figureCollection.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\figureCollection.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/InputReader.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/InputReader.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\InputReader.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/inputReader.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/inputReader.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\inputReader.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/OutputPrinter.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/OutputPrinter.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\OutputPrinter.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/outputPrinter.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/outputPrinter.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\outputPrinter.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/AppController.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/AppController.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\AppController.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/appController.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/appController.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\appController.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/Point.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/Point.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\Point.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/point.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/point.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\point.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
-build CMakeFiles/OOP_lab_01_01_NEW.dir/Figure.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/Figure.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
-  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\Figure.cpp.obj.d
+build CMakeFiles/OOP_lab_01_01_NEW.dir/figure.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/figure.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\figure.cpp.obj.d
   FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
@@ -141,7 +141,7 @@ build CMakeFiles/OOP_lab_01_01_NEW.dir/Figure.cpp.obj: CXX_COMPILER__OOP_lab_01_
 #############################################
 # Link the executable OOP_lab_01_01_NEW.exe
 
-build OOP_lab_01_01_NEW.exe: CXX_EXECUTABLE_LINKER__OOP_lab_01_01_NEW_Debug CMakeFiles/OOP_lab_01_01_NEW.dir/main.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/Circle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/Rectangle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/Triangle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/CircleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/RectangleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/TriangleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/FactoryRegistry.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/FigureCollection.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/InputReader.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/OutputPrinter.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/AppController.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/Point.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/Figure.cpp.obj
+build OOP_lab_01_01_NEW.exe: CXX_EXECUTABLE_LINKER__OOP_lab_01_01_NEW_Debug CMakeFiles/OOP_lab_01_01_NEW.dir/main.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/circle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/rectangle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/triangle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/circleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/rectangleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/triangleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/FactoryRegistry.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/figureCollection.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/inputReader.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/outputPrinter.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/appController.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/point.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/figure.cpp.obj
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir

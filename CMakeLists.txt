@@ -6,32 +6,32 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(OOP_lab_01_01_NEW main.cpp
-    Point.h
-    Figure.h
-    Circle.h Circle.cpp
-    Rectangle.h Rectangle.cpp
-    Triangle.h Triangle.cpp
+    point.h
+    figure.h
+    circle.h circle.cpp
+    rectangle.h rectangle.cpp
+    triangle.h triangle.cpp
 
-    FigureParameters.h
-    FigureFactory.h
-    TriangleFactory.h
-    CircleFactory.h
-    RectangleFactory.h
-    FactoryRegistry.h
-    FigureCollection.h
-    InputReader.h
-    OutputPrinter.h
-    AppController.h
-    CircleFactory.cpp
-    RectangleFactory.cpp
-    TriangleFactory.cpp
-    FactoryRegistry.cpp
-    FigureCollection.cpp
-    InputReader.cpp
-    OutputPrinter.cpp
-    AppController.cpp
-    Point.cpp
-    Figure.cpp)
+    figureParameters.h
+    figureFactory.h
+    triangleFactory.h
+    circleFactory.h
+    rectangleFactory.h
+    factoryRegistry.h
+    figureCollection.h
+    inputReader.h
+    outputPrinter.h
+    appController.h
+    circleFactory.cpp
+    rectangleFactory.cpp
+    triangleFactory.cpp
+    factoryRegistry.cpp
+    figureCollection.cpp
+    inputReader.cpp
+    outputPrinter.cpp
+    appController.cpp
+    point.cpp
+    figure.cpp)
 
 include(GNUInstallDirs)
 install(TARGETS OOP_lab_01_01_NEW
