@@ -7,7 +7,7 @@
 
 Circle::Circle(const std::string& name, Point center, double radius) : Figure(name), center(center), radius(radius) {
     if (radius <= EPS) {
-        throw std::invalid_argument("Circle error: radius must be > 0.");
+        throw std::invalid_argument("\nError: radius must be > 0.\n");
     }
 }
 

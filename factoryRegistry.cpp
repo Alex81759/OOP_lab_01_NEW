@@ -16,7 +16,7 @@ FactoryRegistry::FactoryRegistry() {
 const FigureFactory& FactoryRegistry::getFactory(const std::type_info& type) const {
     const auto it = factories.find(type);
     if (it == factories.end()) {
-        throw std::invalid_argument("Error: unknown figure type.");
+        throw std::invalid_argument("\nError: unknown figure type.\n");
     }
     return *it->second;
 }

@@ -5,7 +5,7 @@
 std::unique_ptr<Figure> TriangleFactory::create(const FigureParameters& params) const {
     const auto* triangleParams = dynamic_cast<const TriangleParameters*>(&params);
     if (triangleParams == nullptr) {
-        throw std::invalid_argument("TriangleFactory error: wrong parameter type.");
+        throw std::invalid_argument("\nError: wrong parameter type.\n");
     }
     return std::make_unique<Triangle>(triangleParams->getName(), triangleParams->getA(), triangleParams->getB(), triangleParams->getC());
 }

@@ -7,7 +7,7 @@ Rectangle::Rectangle(const std::string& name, Point upperLeft, Point lowerRight)
     const bool validX = upperLeft.getX() + EPS < lowerRight.getX();
     const bool validY = upperLeft.getY() > lowerRight.getY() + EPS;
     if (!validX || !validY) {
-        throw std::invalid_argument("Rectangle error: invalid corners (upper-left / lower-right).");
+        throw std::invalid_argument("\nError: invalid corners (upper-left / lower-right).\n");
     }
 }
 

@@ -16,7 +16,7 @@ int InputReader::readMenuChoice() const {
         std::cin >> value;
         isValid = std::cin.good() && value >= minMenuValue && value <= maxMenuValue;
         if (!isValid) {
-            std::cout << "Invalid input. Try again.\n";
+            std::cout << "\nInvalid input. Try again.\n\n";
         }
         clearInput();
     }
@@ -31,7 +31,7 @@ int InputReader::readFigureMenuChoice() const {
         std::cin >> value;
         isValid = std::cin.good() && value >= minFigureMenuValue && value <= maxFigureMenuValue;
         if (!isValid) {
-            std::cout << "Invalid input. Try again.\n";
+            std::cout << "\nInvalid input. Try again.\n\n";
         }
         clearInput();
     }
@@ -44,7 +44,7 @@ int InputReader::readFigureTypeChoice() const {
 
 std::size_t InputReader::readFigureIndex(std::size_t maxIndex) const {
     if (maxIndex == 0) {
-        throw std::invalid_argument("No figures in collection.");
+        throw std::invalid_argument("\nNo figures in collection.\n");
     }
     std::size_t index = 0;
     bool isValid = false;
@@ -53,7 +53,7 @@ std::size_t InputReader::readFigureIndex(std::size_t maxIndex) const {
         std::cin >> index;
         isValid = std::cin.good() && index >= 1 && index <= maxIndex;
         if (!isValid) {
-            std::cout << "Invalid number. Try again.\n";
+            std::cout << "\nInvalid number. Try again.\n\n";
         }
         clearInput();
     }
@@ -68,7 +68,7 @@ double InputReader::readDouble(const std::string& text) const {
         std::cin >> value;
         isValid = std::cin.good();
         if (!isValid) {
-            std::cout << "Invalid real number. Try again.\n";
+            std::cout << "\nInvalid real number. Try again.\n\n";
         }
         clearInput();
     }
@@ -83,7 +83,7 @@ std::string InputReader::readNonEmptyString(const std::string& text) const {
         std::getline(std::cin, st);
         isValid = !st.empty();
         if (!isValid) {
-            std::cout << "String must not be empty.\n";
+            std::cout << "\nString must not be empty.\n\n";
         }
     }
     return st;
@@ -116,9 +116,6 @@ std::unique_ptr<FigureParameters> InputReader::readFigureParameters(const std::t
         const Point b = readPoint("Enter point B");
         const Point c = readPoint("Enter point C");
         result = std::make_unique<TriangleParameters>(name, a, b, c);
-    }
-    else {
-        throw std::invalid_argument("Unknown figure type.");
     }
     return result;
 }

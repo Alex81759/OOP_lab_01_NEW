@@ -24,7 +24,7 @@ void OutputPrinter::printFigureTypeMenu() const {
 void OutputPrinter::printFiguresWithParameters(const FigureCollection& collection) const {
     const auto& figures = collection.getAll();
     if (figures.empty()) {
-        std::cout << "Collection is empty.\n";
+        std::cout << "\nCollection is empty.\n";
         return;
     }
     for (std::size_t i = 0; i < figures.size(); ++i) {
@@ -35,7 +35,7 @@ void OutputPrinter::printFiguresWithParameters(const FigureCollection& collectio
 void OutputPrinter::printFiguresWithPerimeter(const FigureCollection& collection) const {
     const auto& figures = collection.getAll();
     if (figures.empty()) {
-        std::cout << "Collection is empty.\n";
+        std::cout << "\nCollection is empty.\n";
         return;
     }
     std::cout << std::fixed << std::setprecision(6);
@@ -54,5 +54,5 @@ void OutputPrinter::printMessage(const std::string& message) const {
 }
 
 void OutputPrinter::printError(const std::string& error) const {
-    std::cout << "Error: " << error << "\n";
+    std::cout << "\nError: " << error << "\n";
 }

@@ -15,13 +15,13 @@ Triangle::Triangle(const std::string& name, Point a, Point b, Point c) : Figure(
     const double bc = distance(b, c);
     const double ca = distance(c, a);
     if (ab <= EPS || bc <= EPS || ca <= EPS) {
-        throw std::invalid_argument("Triangle error: identical vertices.");
+        throw std::invalid_argument("\nError: identical vertices.\n");
     }
     const double area2 = std::fabs(
         (b.getX() - a.getX()) * (c.getY() - a.getY()) - (b.getY() - a.getY()) * (c.getX() - a.getX())
     );
     if (area2 <= EPS) {
-        throw std::invalid_argument("Triangle error: degenerate triangle.");
+        throw std::invalid_argument("\nError: wrong triangle.\n");
     }
 }
 

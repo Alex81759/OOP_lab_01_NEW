@@ -7,7 +7,7 @@
 #include "figureCollection.h"
 #include "inputReader.h"
 #include "outputPrinter.h"
-// поменять имя файлов
+
 class AppController {
     private:
         enum class MenuAction {
@@ -33,11 +33,16 @@ class AppController {
         void totalPerimeter();
         void sortFigures();
         void removeByIndex();
+        void createFigure(const std::type_info& type);
+        void createCircle();
+        void createRectangle();
+        void createTriangle();
         FactoryRegistry registry;
         FigureCollection collection;
         InputReader input;
         OutputPrinter output;
         std::map<MenuAction, std::function<void()>> actionHandlers;
+        std::map<MenuFigureChoice, std::function<void()>> actionHandlersFigures;
     public:
         AppController();
         void run();

@@ -224,7 +224,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "TriangleFactory.h",
+			"path" : "triangleFactory.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -277,13 +277,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "TriangleFactory.cpp",
+			"path" : "triangleFactory.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "FactoryRegistry.cpp",
+			"path" : "factoryRegistry.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

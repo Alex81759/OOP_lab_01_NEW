@@ -4,14 +4,14 @@
 
 void FigureCollection::add(std::unique_ptr<Figure> figure) {
     if (!figure) {
-        throw std::invalid_argument("Collection error: null figure.");
+        throw std::invalid_argument("\nError: null figure.\n");
     }
     figures.push_back(std::move(figure));
 }
 
 void FigureCollection::removeByIndex(std::size_t index) {
     if (index >= figures.size()) {
-        throw std::out_of_range("Collection error: index out of range.");
+        throw std::out_of_range("\nError: index out of range.\n");
     }
     figures.erase(figures.begin() + static_cast<long>(index));
 }
