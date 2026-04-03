@@ -31,7 +31,10 @@ add_executable(OOP_lab_01_01_NEW main.cpp
     outputPrinter.cpp
     appController.cpp
     point.cpp
-    figure.cpp)
+    figure.cpp
+    appInterface.h
+    appInterface.cpp
+)
 
 include(GNUInstallDirs)
 install(TARGETS OOP_lab_01_01_NEW

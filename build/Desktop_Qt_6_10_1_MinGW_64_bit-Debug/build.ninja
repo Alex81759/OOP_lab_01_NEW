@@ -133,6 +133,12 @@ build CMakeFiles/OOP_lab_01_01_NEW.dir/figure.cpp.obj: CXX_COMPILER__OOP_lab_01_
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
   OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
 
+build CMakeFiles/OOP_lab_01_01_NEW.dir/appInterface.cpp.obj: CXX_COMPILER__OOP_lab_01_01_NEW_unscanned_Debug C$:/Users/admin/Desktop/Qt_Projects(NEW)/OOP_lab_01_01_NEW/OOP_lab_01_NEW/appInterface.cpp || cmake_object_order_depends_target_OOP_lab_01_01_NEW
+  DEP_FILE = CMakeFiles\OOP_lab_01_01_NEW.dir\appInterface.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
+  OBJECT_FILE_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target OOP_lab_01_01_NEW
@@ -141,7 +147,7 @@ build CMakeFiles/OOP_lab_01_01_NEW.dir/figure.cpp.obj: CXX_COMPILER__OOP_lab_01_
 #############################################
 # Link the executable OOP_lab_01_01_NEW.exe
 
-build OOP_lab_01_01_NEW.exe: CXX_EXECUTABLE_LINKER__OOP_lab_01_01_NEW_Debug CMakeFiles/OOP_lab_01_01_NEW.dir/main.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/circle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/rectangle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/triangle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/circleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/rectangleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/triangleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/factoryRegistry.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/figureCollection.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/inputReader.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/outputPrinter.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/appController.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/point.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/figure.cpp.obj
+build OOP_lab_01_01_NEW.exe: CXX_EXECUTABLE_LINKER__OOP_lab_01_01_NEW_Debug CMakeFiles/OOP_lab_01_01_NEW.dir/main.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/circle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/rectangle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/triangle.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/circleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/rectangleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/triangleFactory.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/factoryRegistry.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/figureCollection.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/inputReader.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/outputPrinter.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/appController.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/point.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/figure.cpp.obj CMakeFiles/OOP_lab_01_01_NEW.dir/appInterface.cpp.obj
   FLAGS = -DQT_QML_DEBUG -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\OOP_lab_01_01_NEW.dir

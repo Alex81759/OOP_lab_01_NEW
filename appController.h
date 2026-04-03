@@ -7,6 +7,7 @@
 #include "figureCollection.h"
 #include "inputReader.h"
 #include "outputPrinter.h"
+#include "appInterface.h"
 
 class AppController {
     private:
@@ -25,7 +26,6 @@ class AppController {
             MENU_FIGURE_RECTANGLE,
             MENU_FIGURE_TRIANGLE
         };
-        bool processMenuChoice(MenuAction action);
         void addFigure();
         void listParams();
         void removeGreater();
@@ -41,6 +41,8 @@ class AppController {
         FigureCollection collection;
         InputReader input;
         OutputPrinter output;
+        MainMenuInterface mainMenu;
+        FigureTypeMenuInterface figureMenu;
         std::map<MenuAction, std::function<void()>> actionHandlers;
         std::map<MenuFigureChoice, std::function<void()>> actionHandlersFigures;
     public:

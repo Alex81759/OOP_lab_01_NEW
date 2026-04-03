@@ -7,10 +7,10 @@
 
 class InputReader {
     private:
-        static const int minMenuValue = 0;
-        static const int minFigureMenuValue = 1;
-        static const int maxMenuValue = 7;
-        static const int maxFigureMenuValue = 3;
+        const int minMenuValue = 0;
+        const int minFigureMenuValue = 1;
+        const int maxMenuValue = 7;
+        const int maxFigureMenuValue = 3;
         Point readPoint(const std::string& prompt) const;
     public:
         int readMenuChoice() const;

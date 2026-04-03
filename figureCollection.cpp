@@ -17,11 +17,13 @@ void FigureCollection::removeByIndex(std::size_t index) {
 }
 
 void FigureCollection::removeWithPerimeterGreaterThan(double limit) {
-    figures.erase(std::remove_if(figures.begin(), figures.end(), [limit] (const std::unique_ptr<Figure>& figure) {return figure->perimeter() > limit;}), figures.end());
+    figures.erase(std::remove_if(figures.begin(), figures.end(),
+        [limit] (const std::unique_ptr<Figure>& figure) {return figure->perimeter() > limit;}), figures.end());
 }
 
 void FigureCollection::sortByPerimeterAscending() {
-    std::sort(figures.begin(), figures.end(), [] (const std::unique_ptr<Figure>& left, const std::unique_ptr<Figure>& right) {return left->perimeter() < right->perimeter();});
+    std::sort(figures.begin(), figures.end(),
+        [] (const std::unique_ptr<Figure>& left, const std::unique_ptr<Figure>& right) {return left->perimeter() < right->perimeter();});
 }
 
 double FigureCollection::totalPerimeter() const {
