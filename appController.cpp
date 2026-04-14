@@ -1,7 +1,11 @@
 #include "appController.h"
-#include <stdexcept>
 
 AppController::AppController() : mainMenu(input, output), figureMenu(input, output) {
+    initActionHandlers();
+    initFigureActionHandlers();
+}
+
+void AppController::initActionHandlers() {
     actionHandlers[MenuAction::MENU_ADD] = std::bind(&AppController::addFigure, this);
     actionHandlers[MenuAction::MENU_LIST_PARAMS] = std::bind(&AppController::listParams, this);
     actionHandlers[MenuAction::MENU_LIST_PERIMETER] = std::bind(&AppController::listPerimeter, this);
@@ -9,6 +13,9 @@ AppController::AppController() : mainMenu(input, output), figureMenu(input, outp
     actionHandlers[MenuAction::MENU_SORT] = std::bind(&AppController::sortFigures, this);
     actionHandlers[MenuAction::MENU_REMOVE_BY_INDEX] = std::bind(&AppController::removeByIndex, this);
     actionHandlers[MenuAction::MENU_REMOVE_GREATER] = std::bind(&AppController::removeGreater, this);
+}
+
+void AppController::initFigureActionHandlers() {
     actionHandlersFigures[MenuFigureChoice::MENU_FIGURE_CRICLE] = std::bind(&AppController::createCircle, this);
     actionHandlersFigures[MenuFigureChoice::MENU_FIGURE_RECTANGLE] = std::bind(&AppController::createRectangle, this);
     actionHandlersFigures[MenuFigureChoice::MENU_FIGURE_TRIANGLE] = std::bind(&AppController::createTriangle, this);
@@ -17,15 +24,12 @@ AppController::AppController() : mainMenu(input, output), figureMenu(input, outp
 void AppController::run() {
     while (true) {
         try {
-            const int choice = mainMenu.execut();
+            const int choice = mainMenu.execute(actionHandlers);
             const auto action = static_cast<MenuAction>(choice);
             if (action == MenuAction::MENU_EXIT) {
                 break;
             }
-            if (!actionHandlers.count(action)) {
-                throw std::invalid_argument("\nUnknown menu action.\n");
-            }
-            actionHandlers[action]();
+            actionHandlers.at(action)();
         } catch (const std::exception& ex) {
             output.printError(ex.what());
         }
@@ -33,9 +37,9 @@ void AppController::run() {
 }
 
 void AppController::addFigure() {
-    const int typeValue = figureMenu.execut();
+    const int typeValue = figureMenu.execute(actionHandlersFigures);
     const auto choice = static_cast<MenuFigureChoice>(typeValue);
-    actionHandlersFigures[choice]();
+    actionHandlersFigures.at(choice)();
     output.printMessage("\nFigure added successfully.\n");
 }
 
@@ -57,6 +61,9 @@ void AppController::sortFigures() {
 }
 
 void AppController::removeByIndex() {
+    if (collection.size() == 0) {
+        throw std::invalid_argument("\nNo figures in collection.\n");
+    }
     const std::size_t index = input.readFigureIndex(collection.size());
     collection.removeByIndex(index);
     output.printMessage("\nRemoved.\n");

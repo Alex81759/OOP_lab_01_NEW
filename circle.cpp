@@ -5,7 +5,7 @@
 #define _USE_MATH_DEFINES
 #define EPS 1e-9
 
-Circle::Circle(const std::string& name, Point center, double radius) : Figure(name), center(center), radius(radius) {
+Circle::Circle(const std::string& name, const Point& center, double radius) : Figure(name), center(center), radius(radius) {
     if (radius <= EPS) {
         throw std::invalid_argument("\nError: radius must be > 0.\n");
     }

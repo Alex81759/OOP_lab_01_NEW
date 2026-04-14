@@ -10,7 +10,7 @@ class Triangle : public Figure {
         Point b;
         Point c;
     public:
-        Triangle(const std::string& name, Point a, Point b, Point c);
+        Triangle(const std::string& name, const Point& a, const Point& b, const Point& c);
         const std::type_info& getType() const override;
         double perimeter() const override;
         std::string parametersToString() const override;

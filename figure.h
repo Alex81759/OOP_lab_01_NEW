@@ -8,7 +8,7 @@ class Figure {
     protected:
         std::string name;
     public:
-        Figure(std::string name);
+        Figure(const std::string& name);
         virtual ~Figure() = default;
         const std::string& getName() const;
         virtual const std::type_info& getType() const = 0;

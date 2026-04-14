@@ -26,6 +26,8 @@ class AppController {
             MENU_FIGURE_RECTANGLE,
             MENU_FIGURE_TRIANGLE
         };
+        void initActionHandlers();
+        void initFigureActionHandlers();
         void addFigure();
         void listParams();
         void removeGreater();

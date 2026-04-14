@@ -12,7 +12,7 @@ class FigureParameters {
     private:
         std::string name;
     protected:
-        explicit FigureParameters(std::string figureName) : name(std::move(figureName)) {}
+        explicit FigureParameters(const std::string& figureName) : name(figureName) {}
     public:
         virtual ~FigureParameters() = default;
         virtual const std::type_info& getType() const = 0;
@@ -26,7 +26,7 @@ class CircleParameters : public FigureParameters {
         Point center;
         double radius;
     public:
-        CircleParameters(std::string name, Point centerPoint, double circleRadius) : FigureParameters(std::move(name)), center(centerPoint), radius(circleRadius) {}
+        CircleParameters(const std::string& name, const Point& centerPoint, double circleRadius) : FigureParameters(name), center(centerPoint), radius(circleRadius) {}
         const std::type_info& getType() const override {
             return typeid(Circle);
         }
@@ -43,7 +43,7 @@ class RectangleParameters : public FigureParameters {
         Point upperLeft;
         Point lowerRight;
     public:
-        RectangleParameters(std::string name, Point upperLeftPoint, Point lowerRightPoint) : FigureParameters(std::move(name)), upperLeft(upperLeftPoint), lowerRight(lowerRightPoint) {}
+        RectangleParameters(const std::string& name, const Point& upperLeftPoint, const Point& lowerRightPoint) : FigureParameters(name), upperLeft(upperLeftPoint), lowerRight(lowerRightPoint) {}
         const std::type_info& getType() const override {
             return typeid(Rectangle);
         }
@@ -61,7 +61,7 @@ class TriangleParameters : public FigureParameters {
         Point b;
         Point c;
     public:
-        TriangleParameters(std::string name, Point pointA, Point pointB, Point pointC) : FigureParameters(std::move(name)), a(pointA), b(pointB), c(pointC) {}
+        TriangleParameters(const std::string& name, const Point& pointA, const Point& pointB, const Point& pointC) : FigureParameters(name), a(pointA), b(pointB), c(pointC) {}
         const std::type_info& getType() const override {
             return typeid(Triangle);
         }

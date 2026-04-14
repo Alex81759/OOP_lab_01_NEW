@@ -54,5 +54,5 @@ void OutputPrinter::printMessage(const std::string& message) const {
 }
 
 void OutputPrinter::printError(const std::string& error) const {
-    std::cout << "\nError: " << error << "\n";
+    std::cout << error << "\n";
 }

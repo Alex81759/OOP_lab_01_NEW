@@ -10,7 +10,7 @@ double distance(const Point& p1, const Point& p2) {
     return std::sqrt(dx * dx + dy * dy);
 }
 
-Triangle::Triangle(const std::string& name, Point a, Point b, Point c) : Figure(name), a(a), b(b), c(c) {
+Triangle::Triangle(const std::string& name, const Point& a, const Point& b, const Point& c) : Figure(name), a(a), b(b), c(c) {
     const double ab = distance(a, b);
     const double bc = distance(b, c);
     const double ca = distance(c, a);

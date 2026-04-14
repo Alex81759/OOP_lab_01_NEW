@@ -3,7 +3,7 @@
 
 #define EPS 1e-9
 
-Rectangle::Rectangle(const std::string& name, Point upperLeft, Point lowerRight) : Figure(name), upperLeft(upperLeft), lowerRight(lowerRight) {
+Rectangle::Rectangle(const std::string& name, const Point& upperLeft, const Point& lowerRight) : Figure(name), upperLeft(upperLeft), lowerRight(lowerRight) {
     const bool validX = upperLeft.getX() + EPS < lowerRight.getX();
     const bool validY = upperLeft.getY() > lowerRight.getY() + EPS;
     if (!validX || !validY) {

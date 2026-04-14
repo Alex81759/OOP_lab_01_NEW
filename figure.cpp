@@ -1,7 +1,6 @@
 #include "figure.h"
-#include <utility>
 
-Figure::Figure(std::string name) : name(std::move(name)) {}
+Figure::Figure(const std::string& name) : name(name) {}
 
 const std::string& Figure::getName() const {
     return name;
