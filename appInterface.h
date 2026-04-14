@@ -4,28 +4,28 @@
 #include "inputReader.h"
 #include "outputPrinter.h"
 
-class Interface {
+class Menu {
     public:
-        virtual ~Interface() = default;
-        virtual int readAndChoice() const = 0;
+        virtual ~Menu() = default;
+        virtual int execut() const = 0;
 };
 
-class MainMenuInterface : public Interface {
+class MainMenu : public Menu {
     private:
         const InputReader& input;
         const OutputPrinter& output;
     public:
-        MainMenuInterface(const InputReader& in, const OutputPrinter& out);
-        int readAndChoice() const override;
+        MainMenu(const InputReader& in, const OutputPrinter& out);
+        int execut() const override;
 };
 
-class FigureTypeMenuInterface : public Interface {
+class FigureTypeMenu : public Menu {
     private:
         const InputReader& input;
         const OutputPrinter& output;
     public:
-        FigureTypeMenuInterface(const InputReader& in, const OutputPrinter& out);
-        int readAndChoice() const override;
+        FigureTypeMenu(const InputReader& in, const OutputPrinter& out);
+        int execut() const override;
 };
 
 #endif // INTERFACE_H

@@ -41,8 +41,8 @@ class AppController {
         FigureCollection collection;
         InputReader input;
         OutputPrinter output;
-        MainMenuInterface mainMenu;
-        FigureTypeMenuInterface figureMenu;
+        MainMenu mainMenu;
+        FigureTypeMenu figureMenu;
         std::map<MenuAction, std::function<void()>> actionHandlers;
         std::map<MenuFigureChoice, std::function<void()>> actionHandlersFigures;
     public:

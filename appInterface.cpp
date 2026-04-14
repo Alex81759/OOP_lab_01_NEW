@@ -1,8 +1,8 @@
 #include "appInterface.h"
 
-MainMenuInterface::MainMenuInterface(const InputReader& in, const OutputPrinter& out) : input(in), output(out) {}
+MainMenu::MainMenu(const InputReader& in, const OutputPrinter& out) : input(in), output(out) {}
 
-int MainMenuInterface::readAndChoice() const {
+int MainMenu::execut() const {
     while (true) {
         try {
             output.printMainMenu();
@@ -13,9 +13,9 @@ int MainMenuInterface::readAndChoice() const {
     }
 }
 
-FigureTypeMenuInterface::FigureTypeMenuInterface(const InputReader& in, const OutputPrinter& out) : input(in), output(out) {}
+FigureTypeMenu::FigureTypeMenu(const InputReader& in, const OutputPrinter& out) : input(in), output(out) {}
 
-int FigureTypeMenuInterface::readAndChoice() const {
+int FigureTypeMenu::execut() const {
     while (true) {
         try {
             output.printFigureTypeMenu();

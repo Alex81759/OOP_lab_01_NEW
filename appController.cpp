@@ -17,7 +17,7 @@ AppController::AppController() : mainMenu(input, output), figureMenu(input, outp
 void AppController::run() {
     while (true) {
         try {
-            const int choice = mainMenu.readAndChoice();
+            const int choice = mainMenu.execut();
             const auto action = static_cast<MenuAction>(choice);
             if (action == MenuAction::MENU_EXIT) {
                 break;
@@ -33,7 +33,7 @@ void AppController::run() {
 }
 
 void AppController::addFigure() {
-    const int typeValue = figureMenu.readAndChoice();
+    const int typeValue = figureMenu.execut();
     const auto choice = static_cast<MenuFigureChoice>(typeValue);
     actionHandlersFigures[choice]();
     output.printMessage("\nFigure added successfully.\n");

@@ -18,7 +18,7 @@ int InputReader::readMenuChoice() const {
         throw std::runtime_error("Invalid input. Try again.\n");
     }
     clearInput();
-    return value;
+    return value;\\
 }
 
 
@@ -31,7 +31,7 @@ int InputReader::readFigureMenuChoice() const {
         clearInput();
         throw std::runtime_error("Invalid input. Try again.\n");
     }
-    clearInput();
+    clearInput();\\\
     return value;
 }
 
@@ -40,7 +40,7 @@ int InputReader::readFigureTypeChoice() const {
 }
 
 std::size_t InputReader::readFigureIndex(std::size_t maxIndex) const {
-    if (maxIndex == 0) {
+    if (maxIndex == 0) {\\
         throw std::invalid_argument("\nNo figures in collection.\n");
     }
     std::size_t index = 0;
@@ -54,7 +54,7 @@ std::size_t InputReader::readFigureIndex(std::size_t maxIndex) const {
         }
         clearInput();
     }
-    return index - 1;
+    return index - 1;\\
 }
 
 double InputReader::readDouble(const std::string& text) const {
@@ -67,7 +67,7 @@ double InputReader::readDouble(const std::string& text) const {
         if (!isValid) {
             std::cout << "\nInvalid real number. Try again.\n\n";
         }
-        clearInput();
+        clearInput();\\
     }
     return value;
 }
@@ -75,7 +75,7 @@ double InputReader::readDouble(const std::string& text) const {
 std::string InputReader::readNonEmptyString(const std::string& text) const {
     std::string st;
     bool isValid = false;
-    while (!isValid) {
+    while (!isValid) {\\
         std::cout << text;
         std::getline(std::cin, st);
         isValid = !st.empty();
